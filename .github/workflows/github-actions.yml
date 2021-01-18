@@ -1,10 +1,16 @@
 name: build & deploy vuepress
 on: [push]
 jobs:
-  check-bats-version:
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
-      - run: npm install 
+      - uses: actions/setup-node@v2
+      - run: npm install
       - run: npm run build
+      - run: |
+          git config --local user.email "wataru72v@gmail.com"
+          git config --local user.name "wataru72v"
+          git add .
+          git commit -m "actions commit"
+          git push origin main
