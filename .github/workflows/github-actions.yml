@@ -11,6 +11,3 @@ jobs:
       - run: |
           git config --local user.email "wataru72v@gmail.com"
           git config --local user.name "wataru72v"
-          git add .
-          git commit -m "actions commit"
-          git push origin main
