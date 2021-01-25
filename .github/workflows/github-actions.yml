@@ -11,3 +11,7 @@ jobs:
       - run: |
           git config --local user.email "wataru72v@gmail.com"
           git config --local user.name "wataru72v"
+          git checkout -b github-pages
+          git add .
+          git commit -m "actions commit"
+          git push -f origin HEAD
